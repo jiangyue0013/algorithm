@@ -7,7 +7,7 @@ def findSmallest(arr):  # 用于查找出数组中最小的元素，返回最小
             smallest_index = i
     return smallest_index
 
-def selectSort(arr):
+def select_sort(arr):
     newArr = []
     while arr:
         smallest = findSmallest(arr)
@@ -16,5 +16,5 @@ def selectSort(arr):
 
 
 arr = [1, 5, 7, 4]
-newArr = selectSort(arr)
+newArr = select_sort(arr)
 print(newArr)

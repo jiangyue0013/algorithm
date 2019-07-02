@@ -1,5 +1,3 @@
-
-
 def insert_sort(data):
     for k in range(1, len(data)):
         cur = data[k]
