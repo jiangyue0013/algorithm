@@ -13,5 +13,5 @@ def counting_sort(numberlist, maxnumber):  # maxnumber为数组中的最大值
 
 
 numberlist = [54, 2, 1, 7, 6, 8, 5, 3, 4]
-maxnumber = 9
+maxnumber = 54
 print(counting_sort(numberlist, maxnumber))
