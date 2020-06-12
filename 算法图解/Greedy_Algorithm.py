@@ -1,3 +1,4 @@
+'''
 旅行商问题和集合覆盖问题有一些共同之处：
 
 你需要计算所有的解，并从中选出最小/最短的那个。这两个问题都属与NP完全问题。
@@ -16,3 +17,28 @@
 * 对于NP完全问题，还没有找到快速解决方法。
 * 面临NP完全问题时，最佳做法是使用近似算法。
 * 贪婪算法易于实现、运行速度快，是不错的近似算法。
+'''
+
+
+# 需要覆盖的州
+states_nedded = set(['mt', 'wa', 'or', 'id', 'nv', 'ut', 'ca', 'az'])
+# 广播台清单使用字典表示
+stations = {}
+stations['kone'] = set(['id', 'nv', 'ut'])
+stations['ktwo'] = set(['wa', 'id', 'mt'])
+stations['kthree'] = set(['or', 'nv', 'ca'])
+stations['kfour'] = set(['nv', 'ut'])
+stations['kfive'] = set(['ca', 'az'])
+# 最终选择的广播台
+fianl_stations = set()
+while states_nedded:
+    best_station = None
+    states_coverd = set()
+    for station, states_for_station in stations.items():
+        covered = states_nedded & states_for_station
+        if len(covered) > len(states_coverd):
+            best_station = station
+            states_coverd = covered
+    states_nedded -= states_coverd
+    fianl_stations.add(best_station)
+print(fianl_stations)

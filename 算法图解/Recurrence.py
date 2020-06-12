@@ -1,4 +1,5 @@
-编写递归函数时，必须告诉它何时停止递归。
+'''
+*!编写递归函数时，必须告诉它何时停止递归。
 
 正因为如此，每个递归函数都有两部分：
 基线条件（base case) 和递归条件（recursive case)。
@@ -17,3 +18,26 @@ __小结__
 * 栈有两种操作：压入和弹出
 * 所有函数调用都进入调用栈
 * 调用栈可能很长，这将占用大量的内存。
+'''
+
+
+# 阶乘函数，输出 i 的阶乘的值
+def fact(i):
+    if i == 1:  # 基线条件
+        return 1
+    else:  # 递归条件
+        return i * fact(i-1)
+
+
+# countdown函数, 输出从 i 到 1。
+def countdown(i):
+    print(i)
+    if i <= 1:  # 基线条件
+        return
+    else:  # 递归条件
+        countdown(i-1)
+
+if __name__ == "__main__":
+    i = 10
+    print(fact(i))
+    countdown(i)

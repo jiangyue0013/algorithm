@@ -1,59 +1,21 @@
-# graph = {}
-# graph['start'] = {}
-# graph['start']['a'] = 6
-# graph['start']['b'] = 2
-# graph['a'] = {}
-# graph['a']['fin'] = 1
-# graph['b'] = {}
-# graph['b']['a'] = 3
-# graph['b']['fin'] = 5
-# graph['fin']={}
-#
-# infinity = float("inf")
-# costs = {}
-# costs['a'] = 6
-# costs['b'] = 2
-# costs['fin'] = infinity
-#
-# parents = {}
-# parents['a'] = 'start'
-# parents['b'] = 'start'
-# parents['fin'] = None
-#
-# processed = []
-# graph = {}
-# graph['start'] = {}
-# graph['start']['a'] = 5
-# graph['start']['c'] = 2
-# graph['a'] = {}
-# graph['a']['b'] = 4
-# graph['a']['d'] = 2
-# graph['b'] = {}
-# graph['b']['d'] = 6
-# graph['b']['fin'] = 8
-# graph['c'] = {}
-# graph['c']['a'] = 8
-# graph['c']['d'] = 7
-# graph['d'] = {}
-# graph['d']['fin'] = 1
-# graph['fin'] = {}
-#
-# infinity = float('inf')
-# costs = {}
-# costs['a'] = 5
-# costs['c'] = 2
-# costs['b'] = infinity
-# costs['d'] = infinity
-# costs['fin'] = infinity
-#
-# parents = {}
-# parents['a'] = 'start'
-# parents['c'] = 'start'
-# parents['b'] = None
-# parents['d'] = None
-# parents['fin'] = None
-#
-# processed = []
+'''
+Dijkstra 算法的步骤：
+1. 找出最便宜的节点，即可在最短时间内前往节点的节点
+2. 对于该节点的邻居，，检查是否有前往他们的更短路径，如果有就更新其开销。
+3. 重复这个过程，直到对图中的每个节点都这样做了。
+4. 计算最终路径
+
+
+计算非加权图中的最短路径，可使用广度优先搜索。
+
+要计算加权图中的最短路径，可使用 Dijkstra 算法。
+
+在无向图中，每条边都是一个环。Dijkstra 算法只适用于有向无环图（directed acyclic graph,DAG)。
+
+有负权边不能使用 Dijkstra 算法。需要使用 Bellman-Ford 算法
+'''
+
+
 graph = {}
 graph['start'] = {}
 graph['start']['a'] = 10
